@@ -162,18 +162,6 @@ app.put("/api/session/:email", (req, res) => {
   res.json({ session });
 });
 
-app.get("/api/test", async (req, res) => {
-  console.log("API Key exists:", process.env.OPENROUTER_API_KEY);
-  console.log("Base URL:", process.env.OPENROUTER_BASE_URL);
-  console.log("Model:", process.env.OPENROUTER_MODEL);
-
-  res.json({
-    apiKeyExists: process.env.OPENROUTER_API_KEY,
-    baseUrl: process.env.OPENROUTER_BASE_URL,
-    model: process.env.OPENROUTER_MODEL,
-  });
-});
-
 app.post("/api/chat", async (req, res) => {
   
   const { messages, profile } = req.body as {
